@@ -1,96 +1,120 @@
+// alert("loading");
 function addNewWEField() {
-    let newNode=document.createElement('textarea');
-    newNode.classList.add('form-control');
-    newNode.classList.add('weField');
-    newNode.setAttribute('placeholder', "Add more work experience");
-    newNode.setAttribute('rows',3);
-
-    let weOb=document.getElementById('we');
-    let weAddButonOb=document.getElementById('weAddButton');
-
-    weOb.insertBefore(newNode, weAddButonOb);
-}
-
-function addNewAQField() {
-    let newNode=document.createElement('textarea');
-    newNode.classList.add('form-control');
-    newNode.classList.add('aqField');
-    newNode.setAttribute('placeholder', "Add more academic qualifications");
-    newNode.setAttribute('rows',3);
-
-    let weOb=document.getElementById('aq');
-    let weAddButonOb=document.getElementById('aqAddButton');
-
-    weOb.insertBefore(newNode, weAddButonOb);
-}
-//generating CV
-function generateCV()
-{
-    //console.log("generating CV");
-
+    //   console.log("Adding new field");
+  
+    let newNode = document.createElement("textarea");
+    newNode.classList.add("form-control");
+    newNode.classList.add("weField");
+    newNode.classList.add("mt-2");
+    newNode.setAttribute("rows", 3);
+    newNode.setAttribute("placeholder", "Enter here");
+  
+    let weOb = document.getElementById("we");
+    let weAddButtonOb = document.getElementById("weAddButton");
+  
+    weOb.insertBefore(newNode, weAddButtonOb);
+  }
+  
+  function addNewAQField() {
+    let newNode = document.createElement("textarea");
+    newNode.classList.add("form-control");
+    newNode.classList.add("eqField");
+    newNode.classList.add("mt-2");
+    newNode.setAttribute("rows", 3);
+    newNode.setAttribute("placeholder", "Enter here");
+  
+    let aqOb = document.getElementById("aq");
+    let aqAddButtonOb = document.getElementById("aqAddButton");
+  
+    aqOb.insertBefore(newNode, aqAddButtonOb);
+  }
+  
+  //generating cv
+  function generateCV() {
+    // console.log("generating CV");
+  
     let nameField = document.getElementById("nameField").value;
-
-    let nameT1= document.getElementById('nameT1')
-
+  
+    let nameT1 = document.getElementById("nameT1");
+  
     nameT1.innerHTML = nameField;
-
+  
     //direct
+  
     document.getElementById("nameT2").innerHTML = nameField;
+  
     //contact
-    document.getElementById("contactT").innerHTML=document.getElementById(
-        "contactField"
+    document.getElementById("contactT").innerHTML = document.getElementById(
+      "contactField"
     ).value;
+  
     //address
-    document.getElementById("addressT").innerHTML=document.getElementById("addressField").value;
-    //fb
-    document.getElementById("fbT").innerHTML=document.getElementById(
-        "fbField"
+    document.getElementById("addressT").innerHTML = document.getElementById(
+      "addressField"
     ).value;
-    //insta
-    document.getElementById("instaT").innerHTML=document.getElementById(
-        "igField"
+    document.getElementById("fbT").innerHTML = document.getElementById(
+      "fbField"
     ).value;
-    //linked
-    document.getElementById("LinkedT").innerHTML=document.getElementById(
-        "linkedinField"
+    document.getElementById("instaT").innerHTML = document.getElementById(
+      "instaField"
     ).value;
-
+    document.getElementById("linkedT").innerHTML = document.getElementById(
+      "linkedField"
+    ).value;
+  
     //objective
-
+  
     document.getElementById("objectiveT").innerHTML = document.getElementById(
-        "objectiveField"
+      "objectiveField"
     ).value;
-
-    // work exp
-    // as there can be more than 1 work exp, therefore 
-    //storing those objects in an array 
-    let wes= document.getElementsByClassName('weField'); 
-
-    let str= '';                 //to create li
-    for(let e of wes)
-    {
-        str= str+ `<li> ${e.value} </li>`;
+  
+    //we
+  
+    let wes = document.getElementsByClassName("weField");
+  
+    let str = "";
+  
+    for (let e of wes) {
+      str = str + `<li> ${e.value} </li>`;
     }
-    document.getElementById("weT").innerHTML=str;
-
-    //Academic Qualification 
-    let aqs= document.getElementsByClassName("eqField");
-
-    let str1= "";
-
-    for(let e of aqs)
-    {
-        str1= str1 + `<li> ${e.value}</li>`;
+  
+    document.getElementById("weT").innerHTML = str;
+  
+    //aq
+  
+    let aqs = document.getElementsByClassName("eqField");
+  
+    let str1 = "";
+  
+    for (let e of aqs) {
+      str1 += `<li> ${e.value} </li>`;
     }
-
-    document.getElementById("aqT").innerHTML=str1;
-
-
-    document.getElementById("cv-form").style.display="none"
+  
+    document.getElementById("aqT").innerHTML = str1;
+  
+    //code for setting image
+  
+    let file = document.getElementById("imgField").files[0];
+  
+    console.log(file);
+  
+    let reader = new FileReader();
+  
+    reader.readAsDataURL(file);
+  
+    console.log(reader.result);
+  
+    //set the image to template
+  
+    reader.onloadend = function () {
+      document.getElementById("imgTemplate").src = reader.result;
+    };
+  
+    document.getElementById("cv-form").style.display = "none";
     document.getElementById("cv-template").style.display = "block";
-}
-
-//print CV
-function printCV(){
+  }
+  
+  //print cv
+  function printCV() {
     window.print();
-}
+  }
