@@ -26,7 +26,7 @@
             </div>
 
             <div class="form-group my-3"> 
-                <label for="contactField">Your Address</label>
+                <label for="addressField">Your Address</label>
                 <textarea
                 id="addressField" 
                 placeholder="Enter your Address" 
@@ -67,7 +67,7 @@
 
                 
                 <div class="form-group my-4"> 
-                    <label for="aboutField">Describe Yourself</label>
+                    <label for="objectiveField">Describe Yourself</label>
                     <textarea placeholder="Tell about yourself" class="form-control"></textarea>
                 </div>
 
@@ -84,7 +84,7 @@
 
                 <div class="form-group my-2" id="aq"> 
                     <label for="aqField">Academic Qualifications</label>
-                    <textarea placeholder="Tell us about your Academic Qualificatons" class="form-control weField" rows="3"></textarea>
+                    <textarea placeholder="Tell us about your Academic Qualificatons" class="form-control eqField" rows="3"></textarea>
                     <div  class="container text-center mt-2" id="aqAddButton">
                         <button onclick="addNewAQField()" class="btn btn-dark btn-sm ">Add</button>
                     </div>
@@ -92,9 +92,8 @@
 
             </div>
             <div  class="container text-center mt-3" id="GenerateCV">
-                <button onclick="" class="btn btn-dark btn-sm ">Generate CV</button>
+                <button onclick="generateCV()" class="btn btn-dark btn-sm ">Generate CV</button>
             </div>
-        
     
     </div>
     </div>
@@ -111,15 +110,15 @@
                 />
 
                 <div class="container">
-                    <p>Jahnvi Gupta</p>
-                    <p>3/123 Vikas Nagar, Lucknow</p>
-                    <p>+918948480057, +919670421045</p>
+                    <p id="nameT1">Jahnvi Gupta</p>
+                    <p id="addressT">3/123 Vikas Nagar, Lucknow</p>
+                    <p id="contactT">+918948480057, +919670421045</p>
 
                 <hr/>
 
-                <p><a href="#1">https://www.facebook.com/jahnvigupta98 </a></p>
-                <p><a href="#2">https://www.instagram.com/xtracheesy </a></p>
-                <p><a href="#3">https://www.linkedin.com/jahnvigupta98 </a></p>
+                <p><a id="fbT" href="#1">https://www.facebook.com/jahnvigupta98 </a></p>
+                <p><a id= "instaT" href="#2">https://www.instagram.com/xtracheesy </a></p>
+                <p><a id="LinkedT" href="#3">https://www.linkedin.com/jahnvigupta98 </a></p>
 
 
                 </div>
@@ -127,7 +126,7 @@
 
             <div class="class col-md-6 py-5">
                 <!----second column------>
-                <h1 class="text-center" style="font-weight: 980;">Jahnvi Gupta</h1>
+                <h1 id= "nameT2" class="text-center" style="font-weight: 980;">Jahnvi Gupta</h1>
                 
                 <!---objective card-->
 
@@ -135,8 +134,8 @@
                     <div class="card-header background">
                         <h3>About Myself</h3>
                     </div>
-                        <div class="card-body"></div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis corporis dicta iusto reiciendis aliquid. Ratione reiciendis expedita unde minus nemo, quia ullam soluta enim temporibus quam blanditiis. Cumque itaque quibusdam ea eaque ullam dolorem, ipsam doloremque temporibus velit quod deserunt. Possimus, recusandae tempora laboriosam eius vel repellat eaque fugiat quidem.</p>
+                        <div id="objectiveT" class="card-body"></div>
+                        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis corporis dicta iusto reiciendis aliquid. Ratione reiciendis expedita unde minus nemo, quia ullam soluta enim temporibus quam blanditiis. Cumque itaque quibusdam ea eaque ullam dolorem, ipsam doloremque temporibus velit quod deserunt. Possimus, recusandae tempora laboriosam eius vel repellat eaque fugiat quidem.</p>
                     </div>
                 
 
@@ -147,7 +146,7 @@
                         <h3>Work Experience</h3>
                     </div>
                         <div class="card-body"></div>
-                        <ul>
+                        <ul id="weT">
                             <li><p>Lorem ipsum dolor sit amet.</p></li>
                             <li><p>Lorem ipsum dolor sit amet.</p></li>
                             <li><p>Lorem ipsum dolor sit amet.</p></li>
@@ -163,7 +162,7 @@
                         <h3>Academic Qualifications</h3>
                     </div>
                         <div class="card-body"></div>
-                        <ul>
+                        <ul id="aqT">
                             <li><p>Lorem ipsum dolor sit amet.</p></li>
                             <li><p>Lorem ipsum dolor sit amet.</p></li>
                             <li><p>Lorem ipsum dolor sit amet.</p></li>
@@ -172,7 +171,7 @@
                     </div>
                 </div>
                 <div class="container mt-3 text-center">
-                    <button class="background">Print CV</button>
+                    <button onclick="printCV()" class="background">Print CV</button>
                 </div>
                 
         </div>
